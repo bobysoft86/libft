@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:05:38 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/27 16:48:41 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:44:08 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 		i = 0;
 		final = (ft_strlen(s1) -1);
+	if(s1[i] == '\0')
+		return (ft_strdup(s1));
 	while (ft_strchr(set, s1[i]) && i <= final)
 	i++;
 	if (i > final)
