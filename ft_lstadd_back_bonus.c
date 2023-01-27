@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 13:00:00 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/26 11:17:20 by roberodr         ###   ########.fr       */
+/*   Created: 2023/01/26 13:54:59 by roberodr          #+#    #+#             */
+/*   Updated: 2023/01/26 14:51:12 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-		return (TRUE);
-	return (FALSE);
+t_list	*tmp;
+
+ tmp = ft_lstlast(*lst);
+ 
+if(!lst || !new)
+	return;
+	if(!*lst)
+	{
+		*lst = new;
+		return;
+	}
+ 
+ tmp ->next = new;
 }

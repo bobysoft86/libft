@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 13:00:00 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/26 11:17:20 by roberodr         ###   ########.fr       */
+/*   Created: 2023/01/26 16:36:35 by roberodr          #+#    #+#             */
+/*   Updated: 2023/01/26 16:41:37 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-		return (TRUE);
-	return (FALSE);
+if (!lst)
+	return;
+
+while(lst)
+	{
+	f(lst->content);
+	lst = lst->next;	
+	}
 }

@@ -1,4 +1,6 @@
-NAME = libft.a
+NAME = libft.a 
+
+NAMEBONUS = .bonus
 
 SRCS = ft_isalpha.c ft_toupper.c ft_isdigit.c ft_isalnum.c \
 		ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c\
@@ -6,9 +8,15 @@ SRCS = ft_isalpha.c ft_toupper.c ft_isdigit.c ft_isalnum.c \
 		ft_memcpy.c ft_memcmp.c ft_memmove.c ft_strlcpy.c ft_strnstr.c \
 		ft_strlcat.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c\
 		ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c\
-		ft_putendl_fd.c ft_putnbr_fd.c
+		ft_putendl_fd.c ft_putnbr_fd.c 
+		
+SRCBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c\
+		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
+		ft_lstmap_bonus.c
+
 
 OBJS = $(SRCS:.c=.o)
+OBJSBONUS = $(SRCBONUS:.c=.o)
 
 CFLAGS	+=	-Wall -Werror -Wextra
 
@@ -21,12 +29,19 @@ all:	$(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
+bonus:	$(NAMEBONUS) 
+	@touch $(NAMEBONUS)
+
+$(NAMEBONUS): $(OBJS) $(OBJSBONUS)
+	ar -rcs $(NAME) $(OBJS) $(OBJSBONUS)
+
+
 clean:
-	rm $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean:		clean
-	rm $(NAME)
+	@rm -f $(NAME) $(NAMEBONUS)
 
 re:	fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re bonus
