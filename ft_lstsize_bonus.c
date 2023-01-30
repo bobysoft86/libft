@@ -6,20 +6,19 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:54:47 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/26 12:23:54 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:42:00 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int		i;
 	t_list	*tmp;
 
 	i = 0;
-	tmp = (t_list*) lst;
-
+	tmp = (t_list *)lst;
 	while (tmp)
 	{
 		i++;

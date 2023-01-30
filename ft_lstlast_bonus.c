@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:29:17 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/26 12:56:16 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:56:38 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-
-if (!lst)
-	return(0);
-
-while (lst->next != NULL)
-
-	lst = lst ->next;
-
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
+		lst = lst->next;
 	return (lst);
-
 }

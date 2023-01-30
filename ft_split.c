@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 12:23:49 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/27 17:29:30 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/30 10:35:41 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,24 @@ size_t	ft_countto(const char *a, char c)
 {
 	int		i;
 	size_t	lenf;
-	
+
 	lenf = 0;
 	i = 0;
-	
 	while (a[i] != '\0')
 	{
 		if (i == 0 && a[i] != c)
 			lenf++;
 		if (i > 0 && a[i] != c && a[i - 1] == c)
 			lenf++;
-		i++;	
+		i++;
 	}
-		return(lenf);
+	return (lenf);
 }
-size_t ft_sizeword(const char *str, char del, int pos)
+
+size_t	ft_sizeword(const char *str, char del, int pos)
 {
-	int size;
+	int	size;
+
 	size = 0;
 	while (str[pos] != del && str[pos])
 	{
@@ -41,9 +42,9 @@ size_t ft_sizeword(const char *str, char del, int pos)
 		size++;
 	}
 	return (size);
-	
 }
-char **ft_split(char const *s, char c)
+
+char	**ft_split(char const *s, char c)
 {
 	size_t	sizemalloc;
 	char	**entrada;
