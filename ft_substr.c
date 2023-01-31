@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:55:06 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/30 11:42:01 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:22:26 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(init, s + start, len + 1);
 	return (init);
 }
-
-
