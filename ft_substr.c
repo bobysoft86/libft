@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:55:06 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/31 10:24:06 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/31 12:01:51 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (ft_strlen(s) < start)
+	{
 		len = 0;
+		init = malloc(sizeof(*init));
+		if (init == NULL )
+			return (0);
+		*init = 0;
+		return (init);
+	}
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
 	init = malloc(sizeof(char) * (len + 1));

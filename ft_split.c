@@ -6,12 +6,13 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 12:23:49 by roberodr          #+#    #+#             */
-/*   Updated: 2023/01/30 10:35:41 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:43:51 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 size_t	ft_countto(const char *a, char c)
 {
@@ -44,6 +45,19 @@ size_t	ft_sizeword(const char *str, char del, int pos)
 	return (size);
 }
 
+char	**ftfree(char **s, size_t contador1)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < contador1)
+	{
+		free(s[i++]);
+	}
+	free(s);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	sizemalloc;
@@ -64,6 +78,8 @@ char	**ft_split(char const *s, char c)
 		cont2++;
 	sizetmp = ft_sizeword(s, c, cont2);
 	entrada[cont1] = ft_substr(s, cont2, sizetmp);
+		if (entrada[cont1] == NULL)
+			return (ftfree(entrada, cont1));
 	cont2 = cont2 + sizetmp;
 	cont1++;
 	}
